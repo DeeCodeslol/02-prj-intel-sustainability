@@ -86,6 +86,12 @@ header p {
 .card p {
   margin: 10px 0 0 0;
   line-height: 1.5;
+  /* Hidden by default */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .card img {
@@ -95,12 +101,26 @@ header p {
   border-radius: 4px;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
 
-body > p {
+.card:hover p,
+.card:focus p,
+.card:focus-within p {
+  /* Expand to reveal content */
+  max-height: 500px; /* large enough for varying content */
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.05s;
+}
+
+/* Make focus visible for keyboard users */
+.card:focus {
+  outline: 2px solid rgba(0,113,197,0.35);
+  outline-offset: 3px;
   text-align: center;
   font-style: italic;
   color: #666;
