@@ -1,1 +1,147 @@
 /* Add your CSS here */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background-color: #0071c5;
+  color: white;
+  padding: 40px 20px;
+}
+
+header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #0071c5;
+  transform: translateX(-50%);
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.card:nth-child(odd) {
+  margin-left: 10%;
+}
+
+.card:nth-child(even) {
+  margin-right: 10%;
+}
+
+.card h2 {
+  color: #0071c5;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #555;
+}
+
+.card p {
+  margin: 10px 0 0 0;
+  line-height: 1.5;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+body > p {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .timeline {
+    padding: 10px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .card:nth-child(odd),
+  .card:nth-child(even) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card h2 {
+    font-size: 1.3em;
+  }
+
+  .card h3 {
+    font-size: 1.1em;
+  }
+}/* Add your CSS here */
